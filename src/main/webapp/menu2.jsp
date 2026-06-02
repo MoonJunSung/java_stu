@@ -6,7 +6,7 @@
 
 <h2>성적입력</h2>
 
-<form name="frm" method="post" action="menu2DB.jsp" onsubmit="return menu2Check()">
+<form name="frm" method="post" action="menu2DB.jsp">
 	<table>
 		<tr>
 			<th>학번</th>
@@ -19,25 +19,20 @@
 			<td>
 				<select name="subcode">
 <%
-try {
 	String sql = "SELECT subcode, subname FROM TBL_SUBJECT_202210 ORDER BY subcode";
-	pstmt = conn.prepareStatement(sql);
-	rs = pstmt.executeQuery();
+	PreparedStatement p = con.prepareStatement(sql);
+	ResultSet rs = p.executeQuery();
 
 	while(rs.next()) {
 %>
-					<option value="<%= rs.getString("subcode") %>">
-						<%= rs.getString("subcode") %>-<%= rs.getString("subname") %>
+					<option value="<%=rs.getString("subcode") %>">
+						<%=rs.getString("subcode") %>-<%=rs.getString("subname") %>
 					</option>
 <%
 	}
-} catch(Exception e) {
-	e.printStackTrace();
-} finally {
-	if(rs != null) rs.close();
-	if(pstmt != null) pstmt.close();
-	if(conn != null) conn.close();
-}
+	rs.close();
+	p.close();
+	con.close();
 %>
 				</select>
 			</td>
@@ -74,8 +69,8 @@ try {
 		</tr>
 		<tr>
 			<td colspan="2">
-				<input type="submit" value="등록">
-				<input type="button" value="취소" onclick="menu2Reset()">
+				<input type="button" value="등록" onclick="insertCheck()">
+				<input type="button" value="취소" onclick="reset()">
 			</td>
 		</tr>
 	</table>
