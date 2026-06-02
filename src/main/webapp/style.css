@@ -1,0 +1,70 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "맑은 고딕", sans-serif;
+}
+
+header {
+	height: 70px;
+	background-color: orange;
+	text-align: center;
+	line-height: 70px;
+}
+
+header h1 {
+	margin: 0;
+	font-size: 20px;
+}
+
+nav {
+	height: 40px;
+	background-color: pink;
+	line-height: 40px;
+	padding-left: 20px;
+}
+
+nav a {
+	margin-right: 25px;
+	color: purple;
+	font-weight: bold;
+}
+
+section {
+	min-height: 520px;
+	background-color: #d9d9d9;
+	padding: 30px;
+	text-align: center;
+}
+
+footer {
+	height: 40px;
+	background-color: orange;
+	text-align: center;
+	line-height: 40px;
+	font-size: 13px;
+}
+
+table {
+	margin: 0 auto;
+	border-collapse: collapse;
+	background-color: #eeeeee;
+}
+
+th, td {
+	border: 1px solid #333;
+	padding: 5px 8px;
+	text-align: center;
+}
+
+h2 {
+	margin-top: 0;
+	margin-bottom: 25px;
+}
+
+input, select {
+	height: 24px;
+}
