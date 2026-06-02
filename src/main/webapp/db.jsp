@@ -1,10 +1,12 @@
 <%@ page import="java.sql.*" %>
 <%
-Connection con = null;
+Connection conn = null;
+PreparedStatement pstmt = null;
+ResultSet rs = null;
 
 try {
 	Class.forName("oracle.jdbc.OracleDriver");
-	con = DriverManager.getConnection(
+	conn = DriverManager.getConnection(
 		"jdbc:oracle:thin:@//localhost:1521/xe",
 		"system",
 		"1234"
