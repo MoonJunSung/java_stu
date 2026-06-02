@@ -20,8 +20,8 @@
 				<select name="subcode">
 <%
 	String sql = "SELECT subcode, subname FROM TBL_SUBJECT_202210 ORDER BY subcode";
-	PreparedStatement p = con.prepareStatement(sql);
-	ResultSet rs = p.executeQuery();
+	pstmt = conn.prepareStatement(sql);
+	rs = pstmt.executeQuery();
 
 	while(rs.next()) {
 %>
@@ -31,8 +31,8 @@
 <%
 	}
 	rs.close();
-	p.close();
-	con.close();
+	pstmt.close();
+	conn.close();
 %>
 				</select>
 			</td>
